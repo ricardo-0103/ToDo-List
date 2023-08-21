@@ -1,0 +1,156 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #050a30;
+}
+
+.tasks_options{   /* header */
+    margin: 40px;
+    font-weight: 500;
+}
+
+#calendar, #work{
+    width: 30px;
+    margin: 0 10px;
+}
+
+#work{
+    margin-left: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color: #050a30;
+}
+
+a:hover{
+    border-bottom: 1px solid;
+}
+
+.container{
+    background: linear-gradient(to right, #96B6C5 0%, #96B6C5 30% ,#ADC4CE 30%, #ADC4CE 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh; 
+    overflow-y: auto; 
+}
+
+.content{
+    background-color: #F1F0E8;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.title{
+    font-family: 'League Spartan', sans-serif;
+    margin-bottom: 35px;
+}
+
+.addTask{
+    display: flex;
+    justify-content: center;
+}
+
+.addTask div{
+    background-color: #ADC4CE;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 10px;
+}
+
+.addTask_input{
+    background-color: #F1F0E8;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn{
+    width: 40px;
+    margin-left: 10px;
+}
+
+.checkbox input {
+    height: 0;
+    width: 0;
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    user-select: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #050a30;
+    background-color: #dedbdb;
+} 
+
+.checkbox .checkmark:after {
+    top: -5px;
+    width: 15px;
+    height: 10px;
+    left: 2px;
+    color: #050a30;
+}
+
+  .checkbox input:checked ~ .checkmark:after {
+    display: block;
+} 
+
+.checkmark:after {
+    content:'✓';
+    position: absolute;
+    display: none;
+} 
+
+.foot{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cross_ofTask{
+    text-decoration: line-through;
+}
+
+@media (max-width:1300px) {
+    .container{
+        background: linear-gradient(to bottom, #96B6C5 0%, #96B6C5 20% ,#ADC4CE 20%, #ADC4CE 100%);
+    }
+}
+
+@media (max-width:500px) {
+    .container{
+        background: linear-gradient(to bottom, #96B6C5 0%, #96B6C5 25% ,#ADC4CE 25%, #ADC4CE 100%);
+    }
+    .tasks_options{   /* header */
+        display: flex;
+        flex-direction: column;
+    }
+    #calendar, #work{
+        margin: 10px;
+    }
+    .content{
+        margin: 0 20px;
+    }
+}

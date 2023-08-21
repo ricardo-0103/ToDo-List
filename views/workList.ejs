@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') %>
+<div class="content">
+  <h1 class="title">Work related List</h1>
+  <form action="/submitWorkTasks" method="post">
+    <% let idWorkTask = 1 %> <% if (locals.workTasks.length != 0) {
+    workTasks.forEach(task => { %>
+    <label class="checkbox" id="workTask<%=idWorkTask%>">
+      <input
+        type="checkbox"
+        class="checkWorkTask"
+        id="checkboxWorkTask<%=idWorkTask%>"
+      />
+      <span class="checkmark"></span>
+      <%= task %>
+    </label>
+    <% idWorkTask++ %>
+    <br />
+    <% }) } %>
+    <div class="addTask">
+      <div>
+        <input
+          class="addTask_input"
+          type="text"
+          name="task"
+          placeholder="Add task"
+        />
+        <input
+          class="btn"
+          type="image"
+          src="images/boton-agregar.png"
+          alt="Add"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<%- include('partials/footer.ejs') %>

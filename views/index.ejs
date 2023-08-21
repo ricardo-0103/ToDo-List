@@ -1,0 +1,40 @@
+<%- include('partials/header.ejs') %>
+<div class="content">
+  <h1 class="title">
+    <%= locals.dayOfWeek %>, <%= locals.month %> <%= locals.day %>, <%=
+    locals.year %>
+  </h1>
+  <form action="/submitDayTasks" method="post">
+    <% let idDayTask = 1; %> <% if (locals.dayTasks.length != 0) {
+    dayTasks.forEach(task => { %>
+    <label class="checkbox" id="dayTask<%=idDayTask%>">
+      <input
+        type="checkbox"
+        class="checkDayTask"
+        id="checkboxDayTask<%=idDayTask%>"
+      />
+      <span class="checkmark"></span>
+      <%= task %>
+    </label>
+    <% idDayTask++%>
+    <br />
+    <% }) } %>
+    <div class="addTask">
+      <div>
+        <input
+          class="addTask_input"
+          type="text"
+          name="task"
+          placeholder="Add task"
+        />
+        <input
+          class="btn"
+          type="image"
+          src="images/boton-agregar.png"
+          alt="Add"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<%- include('partials/footer.ejs') %>
